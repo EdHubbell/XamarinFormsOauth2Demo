@@ -2,7 +2,8 @@
 
 This was based on https://github.com/jsauve/OAuthTwoDemo.XForms, which was published before Xamarin.Forms 1.3.X
 
-1.3.X allows for the ability to just set a MainPage, which looks like a logical way to do things.  For reference, take a look here: http://developer.xamarin.com/guides/cross-platform/xamarin-forms/working-with/app-lifecycle/
+Xamarin.Forms 1.3.X allows for the ability to just set a MainPage, which looks like a logical way to do things.  For reference, take a look here: 
+http://developer.xamarin.com/guides/cross-platform/xamarin-forms/working-with/app-lifecycle/
 
 This is just a demo that allows you to see all the various config screens that you'll encounter when setting up a Google app.  I included the api keys and whatnot, as I don't see any reason not to.  It isn't a real app.  If you set up your app to use this apps credentials, then you'll probably be bummed when I delete the app from my Google account.  Or when I die.  Or whatever. 
 
@@ -13,6 +14,7 @@ Any and all feedback is welcome - There are probably better ways to handle much 
 Some things that I don't like - 
 - Every time there is a login, we're making new pages.  Seems like the old ones are probably floating around somewhere, but I don't know how to find a reference to the previous page.
 - Probably should make that google button look decent if we're going to add other login methods.
+- Storing auth in App.Properties - Works as it is global, but probably a better way to do it.
 
 So here are some nice screenshots:
 
