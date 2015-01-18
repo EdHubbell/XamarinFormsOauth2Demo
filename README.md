@@ -18,14 +18,19 @@ So here are some nice screenshots:
 
 ### Login Flow
 
+Startup screen - This gives us a place to go back to when someone logs out.  If the app starts right out into an Auth page, I think that's a little befuddling.
 
 ![Alt text](/screenshots/StartPage.png?raw=true "StartPage")
 
 ![Alt text](/screenshots/Login_AndroidPlayer.png?raw=true "Login_AndroidPlayer")
 
-![Alt text](/screenshots/Login_iOS.png?raw=true "Login_iOS")
+![Alt text](/screenshots/Login_iOS.png?raw=true&width=100 "Login_iOS")
+
+This screen is only seen once per authenticating user - Once the user grants permission to the app, subsequent logins won't ask for permissions.
 
 ![Alt text](/screenshots/Login_AppPermissions.png?raw=true "Login_AppPermissions")
+
+
 
 ![Alt text](/screenshots/ProfilePage.png?raw=true "ProfilePage")
 
