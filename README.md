@@ -4,7 +4,7 @@ This was based on https://github.com/jsauve/OAuthTwoDemo.XForms, which was publi
 
 1.3.X allows for the ability to just set a MainPage, which looks like a logical way to do things.  For reference, take a look here: http://developer.xamarin.com/guides/cross-platform/xamarin-forms/working-with/app-lifecycle/
 
-This is just a demo that allows you to see all the various config screens that you'll encounter when setting up a Google app.  I included the api keys and whatnot, as I don't see any reason not to.  It isn't a real app. 
+This is just a demo that allows you to see all the various config screens that you'll encounter when setting up a Google app.  I included the api keys and whatnot, as I don't see any reason not to.  It isn't a real app.  If you set up your app to use this apps credentials, then you'll probably be bummed when I delete the app from my Google account.  Or when I die.  Or whatever. 
 
 The app starts on a start page that has a button that says 'Log On With Google'.  I'd love to get more auth methods in here.  I'd especially love to see a demo of native Facebook auth in a Xamarin.Forms app. 
 
@@ -18,13 +18,13 @@ So here are some nice screenshots:
 
 ### Login Flow
 
-Startup screen - This gives us a place to go back to when someone logs out.  If the app starts right out into an Auth page, I think that's a little befuddling.
+Startup screen - This gives us a place to go back to when someone logs out.  If the app starts right out into an Auth page, I think that's a little befuddling.  Apologies for the large screen shots - I really don't feel like going back and shrinking them.
 
 ![Alt text](/screenshots/StartPage.png?raw=true "StartPage")
 
 ![Alt text](/screenshots/Login_AndroidPlayer.png?raw=true "Login_AndroidPlayer")
 
-![Alt text](/screenshots/Login_iOS.png?raw=true&width=100 "Login_iOS")
+![Alt text](/screenshots/Login_iOS.png?raw=true "Login_iOS")
 
 This screen is only seen once per authenticating user - Once the user grants permission to the app, subsequent logins won't ask for permissions.
 
@@ -37,7 +37,7 @@ This screen is only seen once per authenticating user - Once the user grants per
 
 ### Google OAuth2 Config Box Checkkin'
 
-Any time you set up a new app, you're going to have to go thru some screens over at https://console.developers.google.com/project  I have problems even getting to the correct screens, as my box is constantly logged in to at least 2 gmail addresses at any time.
+Any time you set up a new app, you're going to have to go thru some screens over at https://console.developers.google.com/project  I constantly have problems even getting to the correct screens, as my box is constantly logged in to at least 2 gmail addresses at any time.
 
 The redirect address used here is as suggested by a StackOverflow thread here:
 http://stackoverflow.com/questions/25520180/google-account-login-integration-for-android-xamarin
