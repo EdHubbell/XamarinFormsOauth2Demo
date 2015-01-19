@@ -37,7 +37,7 @@ This screen is only seen once per authenticating user - Once the user grants per
 ![Alt text](/screenshots/ProfilePage.png?raw=true "ProfilePage")
 
 
-### Google OAuth2 Config Box Checkkin'
+### Google OAuth2 Config Yak Shavin'
 
 Any time you set up a new app, you're going to have to go thru some screens over at https://console.developers.google.com/project  I constantly have problems even getting to the correct screens, as my box is constantly logged in to at least 2 gmail addresses at any time.
 
