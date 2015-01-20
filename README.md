@@ -9,7 +9,7 @@ This is just a demo that allows you to see all the various config screens that y
 
 The app starts on a start page that has a button that says 'Log On With Google'.  I'd love to get more auth methods in here.  I'd especially love to see a demo of native Facebook auth in a Xamarin.Forms app. 
 
-Any and all feedback is welcome - There are probably better ways to handle much of this.  I'm a Xamarin novice.
+Any and all feedback is welcome - There are probably better ways to handle much of this.  
 
 Some things that I don't like - 
 - Every time there is a login, we're making new pages.  Seems like the old ones are probably floating around somewhere, but I don't know how to find a reference to the previous page.
