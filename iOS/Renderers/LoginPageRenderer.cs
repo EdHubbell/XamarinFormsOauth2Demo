@@ -31,17 +31,21 @@ namespace XamarinFormsOAuth2Demo.iOS
 
 				auth.Completed += (sender, eventArgs) => {
 					if (eventArgs.IsAuthenticated) {
+
+						App.Current.Properties ["access_token"] = eventArgs.Account.Properties ["access_token"].ToString();
+
+						//AccountStore.Create ().Save (eventArgs.Account, "Google");
+
 						// OK, if we get this far, then the user is authenticated - That's great.  
 						// So change the App MainPage so we're at a location that only Auth users can get to.
 						App.Current.MainPage = new ProfilePage();
 
-						App.Current.Properties ["access_token"] = eventArgs.Account.Properties ["access_token"].ToString();
 
 					} else {
 						// Auth failed - The only way to get to this branch on Google is to hit the 'Cancel' button.
 						App.Current.MainPage = new StartPage();
 
-						App.Current.Properties ["access_token"] = "notTokenAvailable";
+						App.Current.Properties ["access_token"] = "";
 					}
 				};
 

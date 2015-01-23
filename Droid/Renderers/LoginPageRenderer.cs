@@ -36,12 +36,13 @@ namespace XamarinFormsOAuth2Demo.Droid
 
 						App.Current.Properties ["access_token"] = eventArgs.Account.Properties ["access_token"].ToString();
 
+						AccountStore.Create (this).Save (eventArgs.Account, "Google");
 					} 
 					else 
 					{
 						// Auth failed - The only way to get to this branch on Google is to hit the 'Cancel' button.
 						App.Current.MainPage = new StartPage();
-						App.Current.Properties ["access_token"] = "notTokenAvailable";
+						App.Current.Properties ["access_token"] = "";
 					}
 				};
 
