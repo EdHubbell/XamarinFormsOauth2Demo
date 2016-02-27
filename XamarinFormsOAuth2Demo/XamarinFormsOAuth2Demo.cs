@@ -33,6 +33,11 @@ namespace XamarinFormsOAuth2Demo
 					App.Current.Properties.Add ("scope", "https://www.googleapis.com/auth/userinfo.email");
 					App.Current.Properties.Add ("authorizeUrl", "https://accounts.google.com/o/oauth2/auth");
 					App.Current.Properties.Add ("redirectUrl", "https://www.googleapis.com/plus/v1/people/me");
+
+					// These are not applicable for Twitter login
+					App.Current.Properties.Add ("clientSecret", "na");
+					App.Current.Properties.Add ("accessTokenUrl", "na");
+
 				} catch {
 				}
 

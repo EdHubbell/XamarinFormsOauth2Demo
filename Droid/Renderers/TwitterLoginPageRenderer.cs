@@ -6,11 +6,11 @@ using Xamarin.Auth;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer (typeof (LoginPage), typeof (LoginPageRenderer))]
+[assembly: ExportRenderer (typeof (TwitterLoginPage), typeof (TwitterLoginPageRenderer))]
 
 namespace XamarinFormsOAuth2Demo.Droid
 {
-	public class LoginPageRenderer : PageRenderer
+	public class TwitterLoginPageRenderer : PageRenderer
 	{
 		bool done = false;
 
@@ -23,11 +23,17 @@ namespace XamarinFormsOAuth2Demo.Droid
 				// this is a ViewGroup - so should be able to load an AXML file and FindView<>
 				var activity = this.Context as Activity;
 
+
+				// Pretty sure we are on the right track here, but we  to make it actually work we'll need to 
+				// override Xamarin Auth so we can get it to use the correct names in the requests. Pain in the ass.
 				var auth = new OAuth2Authenticator (
 					clientId: App.Current.Properties ["clientId"].ToString(),
+					clientSecret: App.Current.Properties ["clientSecret"].ToString(),
 					scope: App.Current.Properties ["scope"].ToString(),
 					authorizeUrl: new Uri( App.Current.Properties ["authorizeUrl"].ToString()),
-					redirectUrl: new Uri(App.Current.Properties ["redirectUrl"].ToString()));
+					redirectUrl: new Uri(App.Current.Properties ["redirectUrl"].ToString()),
+					accessTokenUrl: new Uri(App.Current.Properties ["accessTokenUrl"].ToString()));
+
 
 				auth.Completed += (sender, eventArgs) => {
 					if (eventArgs.IsAuthenticated) 
@@ -36,13 +42,12 @@ namespace XamarinFormsOAuth2Demo.Droid
 
 						App.Current.Properties ["access_token"] = eventArgs.Account.Properties ["access_token"].ToString();
 
-						//AccountStore.Create (this).Save (eventArgs.Account, "Google");
 					} 
 					else 
 					{
-						// Auth failed - The only way to get to this branch on Google is to hit the 'Cancel' button.
+						// Auth failed - The only way to get to this branch is to hit the 'Cancel' button.
 						App.Current.MainPage = new StartPage();
-						App.Current.Properties ["access_token"] = "";
+						App.Current.Properties["access_token"] = "";
 					}
 				};
 
